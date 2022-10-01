@@ -1,0 +1,30 @@
+{
+  "hosting": {
+    "public": "build",
+    "site": "bdaycard",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  },
+  "emulators": {
+    "hosting": {
+      "port": 8003,
+	    "host": "127.0.0.1"
+    },
+    "ui": {
+      "enabled": true,
+      "port": 8006,
+	    "host": "127.0.0.1"
+    },
+    "hub":{
+      "host":"127.0.0.1",
+      "port":8007
+    },
+    "logging":{
+      "host":"127.0.0.1",
+      "port":8008
+    }
+  }
+}
