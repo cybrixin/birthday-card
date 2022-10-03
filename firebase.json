@@ -1,16 +1,23 @@
 {
   "hosting": {
     "public": "build",
-    "site": "bdaycard",
+    "site": "birthday-card",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
     ]
   },
+  "storage": {
+    "rules": "storage.rules"
+  },
   "emulators": {
     "hosting": {
       "port": 8003,
+	    "host": "127.0.0.1"
+    },
+    "storage": {
+      "port": 8004,
 	    "host": "127.0.0.1"
     },
     "ui": {
