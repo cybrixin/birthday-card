@@ -48,6 +48,37 @@
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+
+    <script type="application/javascript">
+      window.captchaLoaded = false;
+      const loadScript = (src, callback = null, fallback = null, defer = true, async =  true) => {
+        const script = document.createElement('script');
+        script.defer = defer;
+        script.async = async;
+
+        if(typeof callback === 'function') {
+            script.onload = callback;
+        }
+
+        if(typeof fallback === 'function') {
+            script.onerror = fallback;
+        }
+
+        script.src = src;
+
+        document.body.appendChild(script);
+      }
+      const PUBLIC_RECAPTCHA_V3_SITE_KEY = '6Lf203shAAAAACksMkQsoGtbwx3uK2hOC4YIOI5j';
+      window.addEventListener("DOMContentLoaded", () => {
+          loadScript(`https://www.google.com/recaptcha/api.js?render=${PUBLIC_RECAPTCHA_V3_SITE_KEY}&date=${+new Date()}`, () => {
+              window.captchaLoaded = true;
+              window.dispatchEvent(new Event("onCaptchaLoadedEvent"));
+          }, () => {
+              window.captchaLoaded = false;
+              window.dispatchEvent(new Event("onCaptchaFailedEvent"))
+          });
+      })
+      </script>
+      <script type="module" src="/src/main.tsx"></script>
+    </body>
 </html>
