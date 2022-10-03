@@ -1,10 +1,17 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
 import './index.css'
-import App from './App';
+import React, { Suspense } from 'react'
+import ReactDOM from 'react-dom/client';
+
+const AppProvider = React.lazy( () => import('@/contexts/AppContext'));
+const Spinner = React.lazy( () => import('@/components/Spinner'));
+const App = React.lazy( () => import("./App"))
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <App/>
+    <Suspense fallback={<Spinner/>}>
+      <AppProvider>
+        <App/>
+      </AppProvider>
+    </Suspense>
   </React.StrictMode>
-)
+);
