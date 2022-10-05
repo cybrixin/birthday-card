@@ -1,9 +1,9 @@
-import './index.css'
+import './index.css';
 import React, { Suspense } from 'react'
 import ReactDOM from 'react-dom/client';
+import AppProvider from '@/contexts/AppContext';
+import Spinner from '@/components/Spinner';
 
-const AppProvider = React.lazy( () => import('@/contexts/AppContext'));
-const Spinner = React.lazy( () => import('@/components/Spinner'));
 const App = React.lazy( () => import("./App"))
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
