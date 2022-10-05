@@ -33,4 +33,7 @@ build/
 # My Files
 TODO.md
 # To move to 
-# assets/ 
+# assets/
+
+.env
+.env.local
