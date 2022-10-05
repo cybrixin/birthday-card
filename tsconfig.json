@@ -21,7 +21,8 @@
       "@/contexts/*": ["contexts/*"],
       "@/hooks/*": ["hooks/*"],
       "@/images/*": ["assests/images/*"],
-      "@/audio/*": ["assests/audio/*"]
+      "@/audio/*": ["assests/audio/*"],
+      "@/util/*": ["util/*"],
     }
   },
   "include": ["src", "types"],
