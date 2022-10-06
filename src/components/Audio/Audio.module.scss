@@ -1,0 +1,33 @@
+.audio-container{
+    @apply z-50 cursor-pointer absolute right-[0.3125rem] bottom-[0.875rem] outline-none;
+
+    &-inner-container {
+        @apply w-[3.75rem] h-[3.75rem] bg-black rounded-[50%] flex justify-center align-middle;
+
+        transition: box-shadow .3s ease-in-out;
+
+        background-image: linear-gradient(-20deg, #ddd6f3 0%, #faaca8 100%, #faaca8 100%);
+        box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+
+        :hover, :focus, :visited, :active {
+            @apply outline-none;
+            box-shadow: 0 0 12px 1.5px rgb(0 0 0 / 15%), 0 2px 10px rgb(0 0 0 / 10%);
+        }
+    }
+}
+
+.audio-app {
+    @apply relative width-[0.3125rem] height-[0.875rem] rounded-[50%];
+
+    .icon {
+        @apply w-100 h-100 cursor-pointer absolute block;
+
+        .play {
+            transform: translate(50%, 30%);
+        }
+
+        .pause {
+            transform: translate(40%, 30%);
+        }
+    }
+}
