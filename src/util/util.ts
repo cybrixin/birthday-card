@@ -106,3 +106,5 @@ export async function getUrl({ storage, bucket, callback } : getUrlPropsType) : 
         }
     }
 }
+
+export const sleep = (ms = 2000) => new Promise((r) => setTimeout(r, ms));
