@@ -7,3 +7,7 @@ type AppConfig = {
     app: any;
     appCheck: any;
 };
+
+type CardProps = {
+    greet: string;
+};
