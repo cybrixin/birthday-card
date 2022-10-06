@@ -1,5 +1,6 @@
 .audio-container {
   @apply z-50 cursor-pointer absolute left-[50%] bottom-[0.875rem] outline-none;
+  transform: translateX(-50%);
 }
 .audio-container .audio-inner-container {
   @apply w-[3.75rem] h-[3.75rem] bg-black rounded-[50%] flex justify-center align-middle;
