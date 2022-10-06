@@ -1,6 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer base {
+  @apply h-full m-0 bg-no-repeat overflow-hidden;
+  background-image: linear-gradient(to right top, #8b31d6, #380c60, #6a24a6, #8b0077, #c75acc);
+  background-attachment: fixed;
+}
 @layer components {
   .stretched-link::after {
     @apply absolute top-0 right-0 bottom-0 left-0 z-[1];
