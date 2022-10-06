@@ -23,6 +23,7 @@
       "@/images/*": ["assests/images/*"],
       "@/audio/*": ["assests/audio/*"],
       "@/util/*": ["util/*"],
+      "@/icons/*": ["icons/*"]
     }
   },
   "include": ["src", "types"],
