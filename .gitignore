@@ -28,12 +28,12 @@ build/
 
 # Firebase
 .firebase/
-.firebase-export/
+.fire-export/
+fire-export/
 
 # My Files
 TODO.md
-# To move to 
-# assets/
 
+# Environment Files
 .env
 .env.local
