@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Kalam:wght@400;700&family=Sacramento&display=swap");
+.card-bd, .card-bd > * {
+  box-sizing: unset !important;
+  @apply cursor-pointer;
+}
+
+.card-bd {
+  @apply relative w-[var(--card-width)] h-[var(--card-height)] border-[0.625rem] border-solid border-blackpink-400 mt-[3.75rem] mb-0 mx-auto bg-no-repeat bg-center bg-cover bg-[#e6f0e6];
+  box-shadow: inset 10px 0px 15px 0px rgba(0, 0, 0, 0.1);
+}
+.card-bd .text-container {
+  @apply w-[80%] h-[80%] m-auto;
+}
+.card-bd .text-container p {
+  @apply leading-[1.2] text-[1.2rem] text-black text-center mt-[0.3125rem] mb-0 mx-auto tracking-[0.125rem] font-bold block;
+  font-family: "Kalam", cursive;
+}
+.card-bd .text-container .head {
+  @apply text-[1.8rem] text-center mt-[0.3125rem] mb-[0.03125rem] leading-[1.2] font-normal;
+  font-family: "Cedarville Cursive", cursive;
+}
+.card-bd .text-container .foot {
+  @apply text-left leading-[1] text-[2rem];
+  font-family: "Sacramento", cursive;
+}
+.card-bd .front {
+  @apply absolute w-full h-full -mt-[0.625rem] mr-0 mb-0 -ml-[0.625rem] border-[0.625rem] border-solid border-blackpink-400 bg-blackpink-400 bg-contain;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transform-origin: 0% 50%;
+  transform: perspective(800px) rotateY(0deg);
+  transition: all 0.8s ease-in-out;
+}
+.card-bd .back {
+  @apply absolute w-full h-full -mt-[0.625rem] mr-0 mb-0 -ml-[0.625rem] border-[0.625rem] border-solid border-blackpink-400 bg-[#e6f0e6];
+  -webkit-backface-visibility: visible;
+          backface-visibility: visible;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+  transform-style: preserve-3d;
+  transform-origin: 0% 50%;
+  transform: perspective(800px) rotateY(0deg);
+  transition: all 0.8s ease-in-out;
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1);
+}
+.card-bd:hover .front {
+  transform: perspective(800px) rotateY(-170deg);
+  background-color: #41718d;
+}
+.card-bd:hover .back {
+  transform: perspective(800px) rotateY(-170deg);
+  box-shadow: 7px 0px 5px 0px rgba(0, 0, 0, 0.3), inset 2px 0px 15px 0px rgba(0, 0, 0, 0.1);
+  background-color: #d2dcd2;
+}
+
+.imgset {
+  @apply -mb-[13.4375rem] relative z-[1];
+}
+.imgset img {
+  @apply rounded-[0.3125px] h-[var(--card-height)];
+  box-shadow: 0px 6px 11px 7px rgba(0, 0, 0, 0.22);
+}/*# sourceMappingURL=Card.module.css.map */
