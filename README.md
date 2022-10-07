@@ -109,7 +109,7 @@ I would someday 📅 like to further develop this with an admin 👩🏻‍💻 
 
 ### TODO Map 📍
 
-- [ ] ⭐🔴 Add links to website, which links the user to project (Github Link, Twitter Link, Website Link).
+- [ ] ⭐🔴 Add my social links to the birthday site pointing to myself... 🖱
 - [ ] 🔴 Know your audience:
   - [ ] Add a custom popup, to send a message to us directly (with feeback). If the user is known (due to dynamic link, no name is required).
   - [ ] ⚠ **Server Side**: Curating the feedback/message from the user to improve/thank them later.
