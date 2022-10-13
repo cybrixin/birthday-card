@@ -6,6 +6,7 @@ const firebaseConfig = {
     projectId: "fire-apps-7827c",
     storageBucket: "fire-apps-7827c.appspot.com",
     appId: "1:693757509513:web:af240134d6cf420ca82b58",
+    measurementId: "G-FD8V1MZYJ0"
 };
 
 const { PUBLIC_RECAPTCHA_v3_SITE_KEY, PUBLIC_FIREBASE_EMULATOR_STORAGE_HOST, PUBLIC_FIREBASE_EMULATOR_STORAGE_PORT } = import.meta.env;
@@ -20,10 +21,12 @@ const { PROD } = import.meta.env;
 
 export default function AppProvider( { children } : any ) : JSX.Element {
     const [ loading, setLoading ] = useState<boolean>(true);
+    const [ logE, setLogEvent ] = useState<any>(null);
     const [ config, setConfig ] = useState<AppConfig>({
         app: null,
         storage: null,
         appCheck: null,
+        analytics: null,
     });
 
     useEffect(() => {
@@ -33,7 +36,7 @@ export default function AppProvider( { children } : any ) : JSX.Element {
                 return;
             }
             (async function(setConfig: React.Dispatch<any>, config: AppConfig, firebaseConfig: object){
-                let { app = null, storage, appCheck = null } = config;
+                let { app = null, storage, appCheck = null, analytics = null } = config;
                 if(app == null) {
                     const { initializeApp } = await import("firebase/app");
                     app = initializeApp(firebaseConfig);
@@ -59,13 +62,27 @@ export default function AppProvider( { children } : any ) : JSX.Element {
                     isTokenAutoRefreshEnabled: true
                     });
                 }
+                
+                if('measurementId' in firebaseConfig && appCheck == null) {
+                    const { getAnalytics, logEvent } = await import("firebase/analytics");
+                    setLogEvent(logEvent);
+                    analytics = getAnalytics(app);
+                }
 
-                setConfig( { app, storage, appCheck } );
+                setConfig( { app, storage, appCheck, analytics } );
 
             })(setConfig, config, firebaseConfig);
 
             setLoading(false);
         }
+
+        document.addEventListener("logEvent", (evt) => {
+            // There must be some options
+            if(logE != null && config != null && config.analytics != null) {
+                const { analytics } = config;
+                
+            }
+        });
     }, [])
 
     return (
