@@ -6,6 +6,7 @@ type AppConfig = {
     storage: any;
     app: any;
     appCheck: any;
+    analytics?: any;
 };
 
 type CardProps = {
