@@ -183,24 +183,6 @@
         }
 
         function showKittens() {
-    $(".terminal").append(
-        "<div class='kittens'>" +
-            "<p class='prompt'>	                             ,----,         ,----,                                          ,---,</p>" +
-            "<p class='prompt'>       ,--.                ,/   .`|       ,/   .`|                     ,--.              ,`--.' |</p>" +
-            "<p class='prompt'>   ,--/  /|    ,---,     ,`   .'  :     ,`   .'  :     ,---,.        ,--.'|   .--.--.    |   :  :</p>" +
-            "<p class='prompt'>,---,': / ' ,`--.' |   ;    ;     /   ;    ;     /   ,'  .' |    ,--,:  : |  /  /    '.  '   '  ;</p>" +
-            "<p class='prompt'>:   : '/ /  |   :  : .'___,/    ,'  .'___,/    ,'  ,---.'   | ,`--.'`|  ' : |  :  /`. /  |   |  |</p>" +
-            "<p class='prompt'>|   '   ,   :   |  ' |    :     |   |    :     |   |   |   .' |   :  :  | | ;  |  |--`   '   :  ;</p>" +
-            "<p class='prompt'>'   |  /    |   :  | ;    |.';  ;   ;    |.';  ;   :   :  |-, :   |   \\ | : |  :  ;_     |   |  '</p>" +
-            "<p class='prompt'>|   ;  ;    '   '  ; `----'  |  |   `----'  |  |   :   |  ;/| |   : '  '; |  \\  \\    `.  '   :  |</p>" +
-            "<p class='prompt'>:   '   \\   |   |  |     '   :  ;       '   :  ;   |   :   .' '   ' ;.    ;   `----.   \\ ;   |  ;</p>" +
-            "<p class='prompt'>'   : |.  \\ |   |  '     '   :  |       '   :  |   '   :  ;/| '   : |  ; .'  /  /`--'  /  `--..`;  </p>" +
-            "<p class='prompt'>|   | '_\\.' '   :  |     ;   |.'        ;   |.'    |   |    \\ |   | '`--'   '--'.     /  .--,_   </p>" +
-            "<p class='prompt'>'   : |     ;   |.'      '---'          '---'      |   :   .' '   : |         `--'---'   |    |`.  </p>" +
-            "<p class='prompt'>;   |,'     '---'                                  |   | ,'   ;   |.'                    `-- -`, ; </p>" +
-            "<p class='prompt'>'---'                                              `----'     '---'                        '---`'</p>" +
-            "<p class='prompt'>                                                              </p></div>"
-        );
 
         var lines = $(".kittens p");
         $.each(lines, function (index, line) {
@@ -224,6 +206,15 @@
                     gif_url = result.data.images.original.url;
                     link_url = result.data.bitly_url ?? result.data.bitly_gif_url;
                     $(".terminal").append(`<a target="_blank" href="${link_url}"><img class="kitten-gif" src="${gif_url}" /></a>`);
+                    // Dispatch an event here....
+                    document.dispatchEvent(new CustomEvent("logEvent", {
+                        detail: {
+                            parameter: '',
+                            value: {
+                                
+                            }
+                        }
+                    }))
                     resetForm(true);
                 }
             );
