@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 .container {
   @apply h-[100vh];
-  background-image: linear-gradient(-105deg, #009acc, #363795);
+  background-image: linear-gradient(-105deg, #c75acc, #363795);
 }
 
 .text-area {
@@ -9,6 +9,17 @@
   transform: translate(-50%, -50%);
 }
 .text-area p {
-  @apply text-slate-900 text-4xl tracking-tight font-extrabold sm:text-5xl dark:text-white;
-  font-family: "Roboto", cursive;
+  @apply m-0;
+}
+.text-area .p1 {
+  @apply text-4xl font-extrabold text-white tracking-wider;
+  font-family: "Roboto", sans-serif;
+}
+.text-area .p2 {
+  @apply text-white text-xl font-normal mt-2 leading-5;
+  font-family: "Roboto", sans-serif;
+}
+.text-area .emoji {
+  all: unset;
+  font-family: "Segoe UI Emoji", sans-serif;
 }/*# sourceMappingURL=Unload.module.css.map */
