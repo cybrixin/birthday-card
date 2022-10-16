@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "fire-apps-7827c"
-  }
+  },
+  "targets": {
+    "fire-apps-7827c": {
+      "hosting": {
+        "birthday": [
+          "birthday-card"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }
