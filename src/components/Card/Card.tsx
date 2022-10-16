@@ -1,12 +1,13 @@
+import styles from './Card.module.css';
 import { useApp } from '@/contexts/AppContext'
 import { lazy, useEffect, useState } from 'react';
-import { getUrl, sleep } from "@/util/util";
-import Spinner from "@/components/Spinner";
-import styles from './Card.module.css';
+import { getUrl } from "@/util/util";
 import useResize from '@/hooks/useResize';
 
-const Unload = lazy(() => import("@/components/Unload"))
-
+const  { Unload, Spinner }  = {
+    Spinner: lazy( () => import("@/components/Spinner") ),
+    Unload: lazy( () => import("@/components/Unload") ),
+};
 
 const bgStyle = `linear-gradient(to bottom, rgba(255, 255, 255), rgba(255, 255, 255, 0.5))`;
 
@@ -24,10 +25,9 @@ export default function Card( { greet='' } : CardProps ) {
 
     const { storage } = useApp();
     const [ loading, setLoading ] = useState<boolean>(true);
-    const [ isTriggered, setTriggered ] = useState<boolean>(false);
     const [ bgUrl, setBgUrl ] = useState<string>('');
     const [ coverUrl, setCoverUrl ] = useState<string>('');
-
+    const [ triggered, setTriggered ] = useState<boolean>(false);
     const [ dimensions ] = useResize();
 
     useEffect( () => {
@@ -45,60 +45,44 @@ export default function Card( { greet='' } : CardProps ) {
 
     useEffect( () => {
         if(bgUrl.length > 0 && coverUrl.length > 0 && loading == true) {
-            setLoading(!loading);
+            setLoading( (old) => !old);
         }
     }, [bgUrl, coverUrl]);
-
-
-    const trigger = !loading && !isTriggered && dimensions.height > heightBreakPoint;
 
     const isBreakpoint = dimensions.height > heightBreakPoint ; 
 
     useEffect( () => {
-        // console.log('triggered');
-        if( trigger ) {
-            // console.log('triggered useEffect');
+        if(!loading && !triggered && isBreakpoint) {
+            
             const notify = async () => {
                 
-                const { toast } = await import('react-toastify');
-
+                const { toast } = await import ('react-toastify');
+                
                 toast('Click on the card to see the message ✉.', {
                     position: "top-left",
                     toastId: "clickCard",
                     autoClose: 8000,
                     hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
+                    pauseOnFocusLoss: false,
+                    pauseOnHover: false,
+                    delay: 2000,
                 });
-
-                await sleep(5000);
 
                 toast('Click on the ▶ below to hear your birthday song 🎶.', {
                     position: "top-left",
                     toastId: "clickPlay",
                     autoClose: 8000,
                     hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
+                    pauseOnFocusLoss: false,
+                    pauseOnHover: false,
+                    delay: 4000
                 });
-            };
-            setTriggered(true);
-            sleep(2000).then(_ => notify());
-        }
-    }, [trigger]);
+            }
 
-
-    useEffect(() => {
-        if(!isBreakpoint && isTriggered) {
-            (async () => {
-                const { toast } = await import('react-toastify');
-                toast.dismiss();
-                setTriggered(false);
-            })();
+            setTriggered( (old) => !old );
+            Promise.all([notify()]);
         }
-    }, [isBreakpoint])
+    }, [loading, isBreakpoint] );
     
     
     return (
