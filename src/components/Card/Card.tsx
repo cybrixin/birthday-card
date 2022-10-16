@@ -102,7 +102,7 @@ export default function Card( { greet='' } : CardProps ) {
     
     
     return (
-        loading ? <Spinner /> : ( isBreakpoint ? <CardComponent bgUrl={bgUrl} coverUrl={coverUrl} greet={greet}/> : <Unload /> )
+        loading ? <Spinner /> : ( isBreakpoint ? <BirthdayCard bgUrl={bgUrl} coverUrl={coverUrl} greet={greet}/> : <Unload /> )
     )
 }
 
@@ -111,7 +111,7 @@ type CardComponentProps = {
     coverUrl: string;
 } & CardProps;
 
-const CardComponent = ({ bgUrl, coverUrl, greet} : CardComponentProps ) : JSX.Element => {
+const BirthdayCard = ({ bgUrl, coverUrl, greet} : CardComponentProps ) : JSX.Element => {
   return (
     <div className={styles["card-bd"]} style={{backgroundImage: `${bgStyle}, url('${bgUrl}')`}}>
             <div className={styles["back"]}></div>
