@@ -1,5 +1,5 @@
 .audio-container{
-    @apply z-50 cursor-pointer absolute left-[50%] bottom-[0.875rem] outline-none;
+    @apply z-50 cursor-pointer fixed left-[50%] bottom-[0.875rem] outline-none;
     transform: translateX(-50%);
 
     .audio-inner-container {
@@ -18,7 +18,7 @@
 }
 
 .audio-app {
-    @apply relative w-[0.3125rem] h-[0.875rem] rounded-[50%] outline-none;
+    @apply relative w-[0.3125rem];
     box-shadow: none;
 
     .loader {
@@ -45,5 +45,41 @@
     svg {
         @apply w-8 leading-none;
         box-shadow: none;
+    }
+}
+
+@media (max-height: 600px) {
+    @media (min-width: 320px){
+        .audio-container {
+            --left: calc(100% - 1.8rem);
+            @apply bottom-[unset] left-[var(--left)];
+            
+            .audio-inner-container {
+                @apply rounded-sm;
+            }
+        }
+    }
+    @media (min-width: 320px) and (max-width: 480px) {
+        .audio-container {
+            --left: calc(7%);
+            @apply top-[15%];
+        }
+    }
+    @media (min-width: 481px) {
+        .audio-container {
+            @apply top-[10%];
+        }
+    }
+
+    @media (max-width: 319px) {
+        .audio-container {
+            @apply hidden;
+        }
+    }
+}
+
+@media (max-height: 480px){
+    .audio-container {
+        @apply hidden;
     }
 }
