@@ -18,7 +18,7 @@
 }
 
 .audio-app {
-    @apply relative w-[0.3125rem];
+    @apply relative w-0;
     box-shadow: none;
 
     .loader {
@@ -35,11 +35,11 @@
     }
 
     .play {
-        transform: translate(-30%, 30%);
+        transform: translate(-40%, 32%);
     }
 
     .pause {
-        transform: translate(-45%, 35%);
+        transform: translate(-50%, 35%);
     }
 
     svg {

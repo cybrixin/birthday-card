@@ -14,7 +14,7 @@
 }
 
 .audio-app {
-  @apply relative w-[0.3125rem];
+  @apply relative w-0;
   box-shadow: none;
 }
 .audio-app .loader {
@@ -28,10 +28,10 @@
   @apply animate-pulse;
 }
 .audio-app .play {
-  transform: translate(-30%, 30%);
+  transform: translate(-40%, 32%);
 }
 .audio-app .pause {
-  transform: translate(-45%, 35%);
+  transform: translate(-50%, 35%);
 }
 .audio-app svg {
   @apply w-8 leading-none;
