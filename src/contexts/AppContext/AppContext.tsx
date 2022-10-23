@@ -9,7 +9,7 @@ const firebaseConfig = {
     measurementId: "G-FD8V1MZYJ0"
 };
 
-const { PUBLIC_RECAPTCHA_v3_SITE_KEY, PUBLIC_FIREBASE_EMULATOR_STORAGE_HOST, PUBLIC_FIREBASE_EMULATOR_STORAGE_PORT } = import.meta.env;
+const { PUBLIC_RECAPTCHA_v3_SITE_KEY } = import.meta.env;
 
 const AppContext: React.Context<any> = React.createContext(null);
 
@@ -48,6 +48,7 @@ export default function AppProvider( { children } : any ) : JSX.Element {
                     storage = getStorage(app);
 
                     if(!PROD) {
+                        const { PUBLIC_FIREBASE_EMULATOR_STORAGE_HOST, PUBLIC_FIREBASE_EMULATOR_STORAGE_PORT } = import.meta.env;
                         connectStorageEmulator(storage, PUBLIC_FIREBASE_EMULATOR_STORAGE_HOST, parseInt(PUBLIC_FIREBASE_EMULATOR_STORAGE_PORT));
                     }
                 }
