@@ -11,9 +11,9 @@ const  { Unload, Spinner }  = {
 
 const bgStyle = `linear-gradient(to bottom, rgba(255, 255, 255), rgba(255, 255, 255, 0.5))`;
 
-const cakeBucket = 'birthday/images/cake.jpg';
+const cakeBucket = 'birthday/images/cake.webp';
 
-const coverBucket = 'birthday/images/bd.png';
+const coverBucket = 'birthday/images/bd.webp';
 
 const heightBreakPoint = 481;
 
