@@ -108,3 +108,52 @@ export async function getUrl({ storage, bucket, callback } : getUrlPropsType) : 
 }
 
 export const sleep = (ms = 2000) => new Promise((r) => setTimeout(r, ms));
+
+type attr = {
+    href: string,
+    rel?: string,
+    type?: string
+} | {
+    type: string,
+    src: string,
+    async?: boolean
+};
+
+export type resource = {
+    parent: HTMLElement;
+    tag: string;
+    attr: attr;
+    url?:string
+};
+
+export const loadx = ( { parent, tag, attr }: resource ) => {
+    return new Promise( (resolve, reject) => {
+
+        if (parent === null || !(parent instanceof HTMLElement)) {
+            return reject(new Error('Parent not found.'));
+        }
+
+        if( tag !== 'script' && tag !== 'link' ) {
+            return reject(new Error(`Element with tag ${tag} could not be created`));
+        }
+
+        const element: HTMLScriptElement | HTMLLinkElement = document.createElement(tag);
+
+        element.onload = () => {
+            resolve(element);
+        };
+
+        element.onerror = (err : any) => {
+            
+            reject(new URIError('The asset ' + err?.target?.src + " didn't load correctly."));
+        };
+
+        Object.keys(attr).forEach((key: string) => {
+            // FIXME: Bad Practice 😑! Could not figure out anything better.
+            // @ts-ignore
+            element[key] = attr[key];
+        });
+
+        parent.appendChild(element);
+    } )
+}
