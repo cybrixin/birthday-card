@@ -1,17 +1,17 @@
 import './index.css';
-import React, { Suspense } from 'react'
-import ReactDOM from 'react-dom/client';
-import AppProvider from '@/contexts/AppContext';
-import Spinner from '@/components/Spinner';
+import { StrictMode, Suspense, lazy } from 'react'
+import { createRoot } from 'react-dom/client';
 
-const App = React.lazy( () => import("./App"))
+const Spinner = lazy( () => import('@/components/Spinner') );
+const App = lazy( () => import("./App") )
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <React.StrictMode>
+const root = document.querySelector('#root') as HTMLElement
+const rootContext = createRoot(root);
+
+rootContext.render(
+  <StrictMode>
     <Suspense fallback={<Spinner/>}>
-      <AppProvider>
-        <App/>
-      </AppProvider>
+      <App/>
     </Suspense>
-  </React.StrictMode>
+  </StrictMode>
 );

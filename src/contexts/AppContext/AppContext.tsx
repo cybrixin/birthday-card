@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState} from "react";
 import Spinner from "@/components/Spinner";
+import type { resource } from "@/util/util";
 
 const firebaseConfig = {
     apiKey: "AIzaSyCpkPHVtTSVw1fhRgnioZcnrqdmnidKVe8",
@@ -19,9 +20,20 @@ export function useApp() : AppConfig {
 
 const { PROD } = import.meta.env;
 
-export default function AppProvider( { children } : any ) : JSX.Element {
+
+type linkLoad = {
+    [key: string]: boolean
+};
+
+type props = {
+    children: any;
+    resource: resource[];
+}
+
+export default function AppProvider( { children, resource }: props) : JSX.Element {
     const [ loading, setLoading ] = useState<boolean>(true);
     const [ logE, setLogEvent ] = useState<any>(null);
+    const [ linkLoaded, setLinkLoaded ] = useState<linkLoad>({});
     const [ config, setConfig ] = useState<AppConfig>({
         app: null,
         storage: null,
@@ -29,8 +41,57 @@ export default function AppProvider( { children } : any ) : JSX.Element {
         analytics: null,
     });
 
+    useEffect( () => {
+        if(!loading) {
+            if(typeof resource !== 'undefined' && resource?.length > 0) {
+                
+                if(linkLoaded === null) {
+                    setLinkLoaded({});
+                };
+
+                // @ts-ignore
+                resource?.forEach( (  { attr:{src = null, href = null} } , key ) => {
+                
+                    if( src == null && href == null ) {
+                        // Delete the resource;
+                        delete resource[key];
+                    }
+
+                    resource[key]['url'] = src ?? href;
+
+                    setLinkLoaded( (ln) => (
+                        {
+                            ...ln,
+                            [src ?? href]: false,
+                        }
+                    ));
+                });
+
+                (async (resource) => {
+                    const { loadx } = await import("@/util/util");
+                    resource.forEach( res => {
+                        const { parent, tag, attr } = res;
+                        const url : string = (res.url ?? "") as string;
+                        if( !(url in linkLoaded ) ) {
+                            loadx({ parent, tag, attr }).then( _ => {
+                                setLinkLoaded( (ln) => (
+                                    {
+                                        ...ln,
+                                        [url]: true,
+                                    }
+                                ));
+                            });
+                        }                        
+                    });
+                    
+                })(resource);
+            }
+        }
+    }, [loading])
+
     useEffect(() => {
         if(loading) {
+
             const { app = null, storage , appCheck = null } = config;
             if(app != null && storage != null && appCheck != null ) {
                 return;

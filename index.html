@@ -42,6 +42,9 @@
 		<meta property="twitter:url" content="https://birthday-card.web.app">
 		<meta property="twitter:description" content="Many many happy returns of the day ✨.">
 		<meta property="twitter:domain" content="birthday-card.web.app">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
 		<link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml">
     
@@ -49,54 +52,6 @@
   </head>
   <body>
     <div id="root"></div>
-    <script type="application/javascript">
-      window.captchaLoaded = false;
-      const loadScript = (src, callback = null, fallback = null, defer = true, async =  true) => {
-        const script = document.createElement('script');
-        script.defer = defer;
-        script.async = async;
-
-        if(typeof callback === 'function') {
-            script.onload = callback;
-        }
-
-        if(typeof fallback === 'function') {
-            script.onerror = fallback;
-        }
-
-        script.src = src;
-
-        document.body.appendChild(script);
-      }
-      const PUBLIC_RECAPTCHA_V3_SITE_KEY = '6Lf203shAAAAACksMkQsoGtbwx3uK2hOC4YIOI5j';
-      window.addEventListener("DOMContentLoaded", () => {
-          loadScript(`https://www.google.com/recaptcha/api.js?render=${PUBLIC_RECAPTCHA_V3_SITE_KEY}&date=${+new Date()}`, () => {
-              window.captchaLoaded = true;
-              window.dispatchEvent(new Event("onCaptchaLoadedEvent"));
-          }, () => {
-              window.captchaLoaded = false;
-              // window.dispatchEvent(new Event("onCaptchaFailedEvent"))
-          });
-      });
-
-      const captchaHandler = ( prompt = '🥳') => {
-        console.group("Captcha Group");
-        console.log("👇🏻 We have some captcha information.");
-        console.log("For privacy policy please check: https://policies.google.com/privacy");
-        if(prompt === '🥳') {
-          console.info("> 🥳 Hurray, we have a ReCaptcha Badge ")
-        }else if( prompt === '😭') {
-          console.warn("> 😭 Something went wrong. Now we do not have ReCaptcha Badge");
-        }else {
-          console.log("> 🤔 We do not have any info!");
-        }
-        console.groupEnd("Captcha Group")
-      } 
-
-      window.addEventListener("onCaptchaLoadedEvent", captchaHandler('🥳'));
-      // window.addEventListener("onCaptchaFailedEvent", captchaHandler('😭'));
-
-      </script>
-      <script type="module" src="/src/main.tsx"></script>
-    </body>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
