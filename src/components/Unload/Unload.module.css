@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 .container {
   @apply h-[100vh];
   background-image: linear-gradient(-105deg, #c75acc, #4042c0);
