@@ -14,7 +14,7 @@ export default function Unload() : JSX.Element {
     return (
       <div className={styles.container}>
           <div className={styles['text-area']}>
-                <p className={styles.p1}>😞 The device is too small to display the card properly.</p>
+                <p className={styles.p1}>❗ The device is too small to display the card properly.</p>
                 { touchPoints ? <p className={styles.p2}>You could rotate <span className={styles.emoji}>🔄</span> your device to view the same.</p> : ""} 
           </div>
       </div>
