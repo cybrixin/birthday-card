@@ -19,6 +19,7 @@
   - [Alternatives of Firebase](#alternatives-of-firebase)
 - [> 👆🏻 Most Cloud Storage services are Backend as a Service (BaaS). They are very likely to provide Cloud Functions, Database Storage etc.](#--most-cloud-storage-services-are-backend-as-a-service-baas-they-are-very-likely-to-provide-cloud-functions-database-storage-etc)
 - [Discussion](#discussion)
+  - [Partial TODO 🟨](#partial-todo-)
   - [TODO Map 📍](#todo-map-)
 - [Current Contributor(s)](#current-contributors)
 - [Conclusion](#conclusion)
@@ -106,6 +107,10 @@ In particular that part could be really be skipped 😑. This site (or any other
 ## Discussion
 
 I would someday 📅 like to further develop this with an admin 👩🏻‍💻 panel or something of that sort. That way I could issue random links 🔗 for each of my friends. Their details (name, email and phone number) will be filled ✍🏻 in dynamically.
+
+### Partial TODO 🟨
+
+- [x] Partial SSR to create custom greetings.
 
 ### TODO Map 📍
 

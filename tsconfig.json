@@ -20,11 +20,9 @@
       "@/components/*": ["components/*"],
       "@/contexts/*": ["contexts/*"],
       "@/hooks/*": ["hooks/*"],
-      "@/images/*": ["assests/images/*"],
-      "@/audio/*": ["assests/audio/*"],
       "@/util/*": ["util/*"],
       "@/icons/*": ["icons/*"],
-      "@/styles/*": ["assests/styles/*"]
+      "@/assets/styles/*": ["assests/styles/*"]
     }
   },
   "include": ["src", "types"],
