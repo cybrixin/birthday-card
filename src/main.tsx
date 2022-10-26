@@ -1,7 +1,7 @@
+import Spinner from '@/components/Spinner'
 import { StrictMode, Suspense, lazy } from 'react'
 import { createRoot } from 'react-dom/client';
 
-const Spinner = lazy( () => import('@/components/Spinner') );
 const App = lazy( () => import("./App") )
 
 const root = document.querySelector('#root') as HTMLElement
