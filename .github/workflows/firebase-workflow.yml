@@ -1,4 +1,4 @@
-name: "Beta CI/CD of "
+name: Beta Hosting on merge
 on:
   push:
     paths:
