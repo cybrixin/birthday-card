@@ -7,6 +7,21 @@
       "**/.*",
       "**/node_modules/**"
     ],
+    "rewrites": [
+      {
+        "source": "/user",
+        "destination": "/404.html",
+        "type": 404
+      },
+      {
+        "regex": "/user(/.*)",
+        "destination": "/index.html"
+      },
+      {
+        "source": "!/@(webp|jpg|jpeg|gif|png|svg|js|css|map|ico)/**",
+        "destination": "/index.html"
+      }
+    ],
     "headers": [
       {
         "source": "**/*.@(webp|jpg|jpeg|gif|png|svg)",
@@ -28,13 +43,28 @@
           "key": "Cache-Control",
           "value": "max-age=300"
         }]
+      },
+      {
+        "source": "**/*.@(ico)",
+        "headers": [{
+          "key": "Cache-Control",
+          "value": "max-age=31536000"
+        }]
       }
     ]
   },
   "storage": {
     "rules": "storage.rules"
   },
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
   "emulators": {
+    "firestore": {
+      "port": 8002,
+      "host": "127.0.0.1"
+    },
     "hosting": {
       "port": 8003,
 	    "host": "127.0.0.1"
