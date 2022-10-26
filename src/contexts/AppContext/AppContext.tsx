@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState} from "react";
+import React, { useContext, useEffect, useState, ReactNode} from "react";
 import Spinner from "@/components/Spinner";
 import type { resource } from "@/util/util";
 
@@ -26,7 +26,7 @@ type linkLoad = {
 };
 
 type props = {
-    children: any;
+    children: ReactNode;
     resource: resource[];
 }
 

@@ -1,0 +1,19 @@
+{
+  "name": "birthday/images/cake.jpg",
+  "bucket": "fire-apps-7827c.appspot.com",
+  "metageneration": 1,
+  "generation": 1665062543833,
+  "contentType": "image/jpeg",
+  "storageClass": "STANDARD",
+  "contentDisposition": "inline",
+  "downloadTokens": [
+    "8a1651d2-270d-4365-bad3-a9dd2f6334d2"
+  ],
+  "etag": "L7whsnTQDtg6MI463b9rB3yB2Hc",
+  "customMetadata": {},
+  "timeCreated": "2022-10-06T13:22:23.833Z",
+  "updated": "2022-10-06T13:22:23.833Z",
+  "size": 28315,
+  "md5Hash": "dJ2rmDaD941MbojbSCiq/Q==",
+  "crc32c": "1211799641"
+}

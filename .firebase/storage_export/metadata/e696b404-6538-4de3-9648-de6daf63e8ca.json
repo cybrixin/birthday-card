@@ -1,0 +1,19 @@
+{
+  "name": "birthday/audio/HappyBirthday.mp3",
+  "bucket": "fire-apps-7827c.appspot.com",
+  "metageneration": 1,
+  "generation": 1665044883285,
+  "contentType": "audio/mpeg",
+  "storageClass": "STANDARD",
+  "contentDisposition": "inline",
+  "downloadTokens": [
+    "f73bff93-4a58-4841-aeab-f043f3fb5d50"
+  ],
+  "etag": "spPr5LHaU+2FqMHvHoQHEOEvOLs",
+  "customMetadata": {},
+  "timeCreated": "2022-10-06T08:28:03.285Z",
+  "updated": "2022-10-06T08:28:03.285Z",
+  "size": 1168124,
+  "md5Hash": "q58Nkrm8udvH7wGAjvn0aA==",
+  "crc32c": "3360497138"
+}
