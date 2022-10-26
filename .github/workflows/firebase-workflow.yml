@@ -1,5 +1,5 @@
 name: "Firebase hosting on development branch."
-run-name: "@${{ github.actor }}: Push on development branch."
+run-name: "Push on development branch."
 on:
   push:
     paths:

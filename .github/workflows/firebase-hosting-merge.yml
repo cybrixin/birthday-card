@@ -1,5 +1,5 @@
 name: "Firebase hosting on main branch."
-run-name: "@${{ github.actor }}: Merge on main branch."
+run-name: "Merge on main branch."
 'on':
   push:
     paths:
