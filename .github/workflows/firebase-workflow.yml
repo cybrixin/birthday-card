@@ -1,5 +1,5 @@
-name: Beta Hosting on push
-run-name: Beta hosting on push ${{ github.actor }}
+name: "Firebase hosting on development branch."
+run-name: "@${{ github.actor }}: Push on development branch."
 on:
   push:
     paths:
