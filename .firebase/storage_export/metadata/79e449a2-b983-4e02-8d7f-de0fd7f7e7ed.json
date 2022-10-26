@@ -1,0 +1,19 @@
+{
+  "name": "birthday/images/og-image.jpg",
+  "bucket": "fire-apps-7827c.appspot.com",
+  "metageneration": 1,
+  "generation": 1665062543973,
+  "contentType": "image/jpeg",
+  "storageClass": "STANDARD",
+  "contentDisposition": "inline",
+  "downloadTokens": [
+    "acefb5f0-1e25-4163-b2b7-2872bb6fcf17"
+  ],
+  "etag": "+YTRw21nEtmUdm+uzxYxD3urQMo",
+  "customMetadata": {},
+  "timeCreated": "2022-10-06T13:22:23.973Z",
+  "updated": "2022-10-06T13:22:23.973Z",
+  "size": 85465,
+  "md5Hash": "IryF4/cUMiKKuuLExFh7WA==",
+  "crc32c": "3019115138"
+}
