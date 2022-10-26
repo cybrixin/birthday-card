@@ -28,5 +28,6 @@ jobs:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_FIRE_APPS_7827C }}'
           channelId: beta
+          target: birthday-card
           expires: 2d
           projectId: fire-apps-7827c
