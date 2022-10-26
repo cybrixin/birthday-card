@@ -8,9 +8,6 @@ run-name: "Merge on main branch."
       - 'index.html'
       - 'public/404.html'
       - 'firebase.json'
-      - 'firestore.rules'
-      - 'firestore.indexes.json'
-      - 'storage.rules'
     branches:
       - main
 jobs:
@@ -18,8 +15,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-        with:
-          node-version: '16'
       - name: "Node Install & Build"
         run: npm ci && npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
