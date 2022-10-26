@@ -28,9 +28,7 @@ dist-ssr
 build/
 
 # Firebase
-.firebase/
-.fire-export/
-fire-export/
+!.firebase/
 
 # My Files
 TODO.md
