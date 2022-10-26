@@ -13,7 +13,7 @@ const bgStyle = `linear-gradient(to bottom, rgba(255, 255, 255), rgba(255, 255, 
 
 const cakeBucket = 'birthday/images/cake.webp';
 
-const coverBucket = 'birthday/images/bd.webp';
+const coverBucket = 'birthday/images/bd.png';
 
 const heightBreakPoint = 481;
 
