@@ -1,5 +1,5 @@
 name: "Firebase hosting"
-'on':
+on:
   schedule:
     # Every week Sunday @ 23:59
     # 
@@ -27,9 +27,9 @@ jobs:
 
   # Development branch
   dev_preview:
-    if: ${{ github.event_name == 'push' && github.repository_owner == github.triggering_actor && github.ref_name == 'development' }} 
     needs: build
     runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'push' && github.repository_owner == github.triggering_actor && github.ref_name == 'development' }} 
     steps:
       - name: "Deploy to firebase beta channel."
       - uses: FirebaseExtended/action-hosting-deploy@v0
@@ -43,9 +43,9 @@ jobs:
   
   # CI on main
   ci:
-    if: ${{ github.event_name == 'schedule' }} 
     needs: build
     runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'schedule' }} 
     steps:
       - name: "Deploy to firebase live channel."
       - uses: FirebaseExtended/action-hosting-deploy@v0
