@@ -12,15 +12,7 @@ export default function App() : JSX.Element {
     parent: document.head,
     tag: 'link',
     attr: {
-      href: 'https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Kalam:wght@400;700&family=Sacramento&display=swap',
-      rel: 'stylesheet',
-      type: 'text/css',
-    }
-  },{
-    parent: document.head,
-    tag: 'link',
-    attr: {
-      href: 'https://fonts.googleapis.com/css2?family=Roboto&display=swap',
+      href: 'https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Kalam:wght@400;700&family=Sacramento&family=Roboto&display=swap',
       rel: 'stylesheet',
       type: 'text/css',
     }
