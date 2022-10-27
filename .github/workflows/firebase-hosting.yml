@@ -7,7 +7,6 @@ on:
       - 'index.html'
       - 'public/404.html'
       - 'firebase.json'
-      - '*.yml'
     branches:
       - development
 jobs:
