@@ -1,9 +1,5 @@
 name: "Firebase hosting"
 on:
-  schedule:
-    # Every week Sunday @ 23:59
-    # 
-    - cron: 0 3 * * FRI
   push:
     paths:
       - 'src/**'
@@ -18,40 +14,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: "Node Install & Build"
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - name: "Node Install & Build"
-        run: npm ci && npm run build
-
-  # Development branch
-  dev_preview:
-    needs: build
-    runs-on: ubuntu-latest
-    if: ${{ github.event_name == 'push' && github.repository_owner == github.triggering_actor && github.ref_name == 'development' }} 
-    steps:
-      - name: "Deploy to firebase beta channel."
-      - uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_FIRE_APPS_7827C }}'
-          channelId: beta
-          target: birthday-card
-          expires: 2d
-          projectId: fire-apps-7827c
-  
-  # CI on main
-  ci:
-    needs: build
-    runs-on: ubuntu-latest
-    if: ${{ github.event_name == 'schedule' }} 
-    steps:
-      - name: "Deploy to firebase live channel."
-      - uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_FIRE_APPS_7827C }}'
-          channelId: live
-          target: birthday-card
-          projectId: fire-apps-7827c
+      - run: npm ci && npm run build
