@@ -4,8 +4,8 @@ import { lazy } from "react"
 import { ToastContainer } from 'react-toastify';
 import AppContext from "@/contexts/AppContext";
 
-const Audio = lazy( () => import('@/components/Audio'));
 const Card = lazy( () => import("@/components/Card"));
+const Audio = lazy( () => import('@/components/Audio'));
 
 export default function App() : JSX.Element {
   const res = [{
