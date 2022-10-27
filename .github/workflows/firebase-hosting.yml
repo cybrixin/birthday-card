@@ -1,6 +1,9 @@
-name: "Firebase hosting on main branch."
-run-name: "Merge on main branch."
+name: "Firebase hosting"
 'on':
+  schedule:
+    # Every week Sunday @ 23:59
+    # 
+    - cron: 0 3 * * FRI
   push:
     paths:
       - 'src/**'
@@ -9,14 +12,42 @@ run-name: "Merge on main branch."
       - 'public/404.html'
       - 'firebase.json'
     branches:
-      - main
+      - development
 jobs:
-  build_and_deploy:
+  # Standard job (no excuses)
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
       - name: "Node Install & Build"
         run: npm ci && npm run build
+
+  # Development branch
+  dev_preview:
+    if: ${{ github.event_name == 'push' && github.repository_owner == github.triggering_actor && github.ref_name == 'development' }} 
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Deploy to firebase beta channel."
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_FIRE_APPS_7827C }}'
+          channelId: beta
+          target: birthday-card
+          expires: 2d
+          projectId: fire-apps-7827c
+  
+  # CI on main
+  ci:
+    if: ${{ github.event_name == 'schedule' }} 
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Deploy to firebase live channel."
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
@@ -24,4 +55,3 @@ jobs:
           channelId: live
           target: birthday-card
           projectId: fire-apps-7827c
-          
