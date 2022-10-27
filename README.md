@@ -87,7 +87,7 @@ In particular that part could be really be skipped 😑. This site (or any other
 ### Alternatives of Firebase
 
 1. For hosting a static site you may continue with:
-   - [Github](https://github.com) [Pages](https://pages.github.com) \[Experienced. Demo: [https://formula21.github.io](https://formula21.github.io)\]
+   - [Github](https://github.com) [Pages](https://pages.github.com) \[Experienced. Demo: [https://anrcry.github.io](https://anrcry.github.io)\]
    - [Render](https://render.com/) \[Never Tried\]
    - [Netlify](https://www.netlify.com/) \[Partially tried. Very Fast 🏁\]
    - [Vercel](https://vercel.app) \[Partially tried. Very Fast 🏁\]
@@ -134,7 +134,7 @@ I would someday 📅 like to further develop this with an admin 👩🏻‍💻 
 
 ## Current Contributor(s)
 
-- **Anweshan Roy Chowdhury**: I go by the name [@formula21](https://github.com/formula21). This project is my sole undertaking 🙂.
+- **Anweshan Roy Chowdhury**: I go by the name [@anrcry](https://github.com/anrcry). This project is my sole undertaking 🙂.
 
 ---
 
@@ -146,4 +146,4 @@ I would like to conclude by saying, I loved developing this project. As always e
 
 Developed with lots of love :heart:,
 
-[Anweshan Roy Chowdhury](https://formula21.github.io).
+[Anweshan Roy Chowdhury](https://anrcry.github.io).
