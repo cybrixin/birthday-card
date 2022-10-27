@@ -24,3 +24,17 @@ jobs:
         run: npm ci
       - name: "Build the library"
         run: npm build
+  
+  dev_preview:
+    runs-on: ubuntu-latest
+    needs: build
+    if: ${{ github.event_name == 'push' && github.repository_owner == github.triggering_actor && github.ref_name == 'development' }} 
+    steps:
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_FIRE_APPS_7827C }}'
+          channelId: beta
+          target: birthday-card
+          expires: 2d
+          projectId: fire-apps-7827c
