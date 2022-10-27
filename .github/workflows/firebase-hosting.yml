@@ -7,6 +7,7 @@ on:
       - 'index.html'
       - 'public/404.html'
       - 'firebase.json'
+      - '*.yml'
     branches:
       - development
 jobs:
@@ -30,6 +31,8 @@ jobs:
     needs: build
     if: ${{ github.event_name == 'push' && github.repository_owner == github.triggering_actor && github.ref_name == 'development' }} 
     steps:
+      - name: "Node checkout"
+        uses: actions/checkout@v3
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
