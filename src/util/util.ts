@@ -148,10 +148,9 @@ export const loadx = ( { parent, tag, attr }: resource ) => {
             reject(new URIError('The asset ' + err?.target?.src + " didn't load correctly."));
         };
 
-        Object.keys(attr).forEach((key: string) => {
-            // FIXME: Bad Practice 😑! Could not figure out anything better.
-            // @ts-ignore
-            element[key] = attr[key];
+        Object.keys(attr as attr).forEach((key: string) => {
+            const tmp: any = attr;
+            element.setAttribute(key, tmp[key]);
         });
 
         parent.appendChild(element);

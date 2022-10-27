@@ -1,4 +1,4 @@
-import '@/assets/styles/index.css'
+import '@/assets/styles/client/index.css'
 import 'react-toastify/dist/ReactToastify.css';
 import { lazy } from "react"
 import { ToastContainer } from 'react-toastify';
