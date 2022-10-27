@@ -24,6 +24,8 @@ jobs:
         run: npm ci
       - name: "Build the library"
         run: npm run build
+      - name: Run a one-line script
+        run: ls
   # Preview: Beta channel
   dev_preview:
     runs-on: ubuntu-latest
