@@ -53,6 +53,12 @@ jobs:
           target: birthday-card
           expires: 2d
           projectID: fire-apps-7827c
+      - name: "Delete the artifact"
+        if: ${{ always() }}
+        uses: geekyeggo/delete-artifact@v2
+        with:
+          name: build
+          failOnError: 'false'
 
   
   live_preview:
