@@ -1,8 +1,9 @@
 name: "Firebase hosting CI/CD"
 on:
   schedule:
-    # Release a version every Monday at 00:00 (IST)
-    - cron: '30 18 * * SUN'
+    # Release a version everyday at 23:59 (IST)
+    # Ensures that anyone with bday gets fresh stuff.
+    - cron: '29 18 * * *'
   push:
     paths:
       - "src/**"
@@ -81,3 +82,9 @@ jobs:
           channelID: live
           target: birthday-card
           projectID: fire-apps-7827c
+      - name: "Delete the artifact"
+        if: ${{ always() }}
+        uses: geekyeggo/delete-artifact@v2
+        with:
+          name: build
+          failOnError: 'false'
