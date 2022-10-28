@@ -91,7 +91,7 @@ jobs:
           name: build
           failOnError: 'false'
       - name: "Notify cronitor.io"
-        # if: ${{ github.event_name == 'schedule' }}
+        if: ${{ github.event_name == 'schedule' }}
         uses: cronitorio/monitor-github-actions@v7
         with:
           event: ${{ toJSON(github.event) }}
