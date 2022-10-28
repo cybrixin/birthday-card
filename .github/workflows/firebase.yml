@@ -1,7 +1,7 @@
 name: "Firebase hosting CI/CD"
 on:
   schedule:
-    - cron: 40 8 * * *
+    - cron: '40 8 * * *'
   push:
     paths:
       - "src/**"
