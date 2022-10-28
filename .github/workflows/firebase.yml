@@ -3,7 +3,7 @@ on:
   schedule:
     # Release a version everyday at 00:00 UTC or 05:30 IST (Same day)
     # Ensures that anyone with bday gets fresh stuff.
-    - cron: '30 * * * *'
+    - cron: '10 * * * *'
   push:
     paths:
       - "src/**"
