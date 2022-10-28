@@ -1,7 +1,7 @@
 name: "Firebase hosting CI/CD"
 on:
   schedule:
-    - cron: '45 19 * * FRI'
+    - cron: '0 0 */1 * *'
   push:
     paths:
       - "src/**"
@@ -90,3 +90,11 @@ jobs:
         with:
           name: build
           failOnError: 'false'
+      - name: "Notify cronitor.io"
+        # if: ${{ github.event_name == 'schedule' }}
+        uses: cronitorio/monitor-github-actions@v7
+        with:
+          event: ${{ toJSON(github.event) }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          cronitor_key: ${{ secrets.CRONITOR_API_KEY }}
+          cronitor_group: live-preview
