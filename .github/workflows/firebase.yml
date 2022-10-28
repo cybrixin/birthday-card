@@ -1,7 +1,8 @@
 name: "Firebase hosting CI/CD"
 on:
   schedule:
-    - cron: '0 9 * * *'
+    # Release a version every Monday at 00:00 (IST)
+    - cron: '30 18 * * SUN'
   push:
     paths:
       - "src/**"
