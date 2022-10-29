@@ -91,10 +91,9 @@ jobs:
           name: build
           failOnError: 'false'
       - name: "Notify cronitor.io"
-        if: ${{ github.event_name == 'schedule' }}
-        uses: cronitorio/monitor-github-actions@v7
+        # if: ${{ github.event_name == 'schedule' }}
+        uses: hugoalh/trigger-pipedream-workflow-ghaction@v3
         with:
-          event: ${{ toJSON(github.event) }}
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          cronitor_key: ${{ secrets.CRONITOR_API_KEY }}
-          cronitor_group: live-preview
+          key: ${{ secrets.PIPEDREAM_KEY }}
+          method: "webhook"
+          payload: ${{ toJSON(github.event) }}
