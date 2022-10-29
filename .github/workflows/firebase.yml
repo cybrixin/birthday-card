@@ -90,8 +90,8 @@ jobs:
         with:
           name: build
           failOnError: 'false'
-      - name: "Notify cronitor.io"
-        # if: ${{ github.event_name == 'schedule' }}
+      - name: "Notify pipedream about trigger."
+        if: ${{ github.event_name == 'schedule' }}
         uses: hugoalh/trigger-pipedream-workflow-ghaction@v3.0.0
         with:
           key: ${{ secrets.PIPEDREAM_KEY }}
