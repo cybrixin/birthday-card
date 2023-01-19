@@ -28,7 +28,7 @@ export default function App() : JSX.Element {
 
   return (
     <AppContext resource={res}>
-      <Card greet="" />
+      <Card greet="Kiran" />
       <Audio />
       <ToastContainer />
     </AppContext>
