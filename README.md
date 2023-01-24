@@ -6,6 +6,7 @@
 
 ## Staus Badge <!-- omit in toc -->
 
+
 [![Firebase hosting CI/CD](https://github.com/anrcry/birthday-card/actions/workflows/firebase.yml/badge.svg?branch=main)](https://github.com/anrcry/birthday-card/actions/workflows/firebase.yml)
 
 ## Table of Contents <!-- omit in toc -->
@@ -21,7 +22,6 @@
     - [AppCheck](#appcheck)
   - [Uses of ReCaptcha V3 Badge](#uses-of-recaptcha-v3-badge)
   - [Alternatives of Firebase](#alternatives-of-firebase)
-- [> 👆🏻 Most Cloud Storage services are Backend as a Service (BaaS). They are very likely to provide Cloud Functions, Database Storage etc.](#--most-cloud-storage-services-are-backend-as-a-service-baas-they-are-very-likely-to-provide-cloud-functions-database-storage-etc)
 - [Discussion](#discussion)
   - [Partial TODO 🟨](#partial-todo-)
   - [TODO Map 📍](#todo-map-)
