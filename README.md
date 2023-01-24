@@ -6,8 +6,6 @@
 
 ## Staus Badge <!-- omit in toc -->
 
-[![Firebase hosting CI/CD](https://github.com/anrcry/birthday-card/actions/workflows/firebase.yml/badge.svg?branch=main)](https://github.com/anrcry/birthday-card/actions/workflows/firebase.yml)
-
 ## Table of Contents <!-- omit in toc -->
 
 - [Demo 👁](#demo-)
