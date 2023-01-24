@@ -4,13 +4,9 @@
 >
 > _Much Ado About Nothing_ - William Shakespeare.
 
-## Staus Badge <!-- omit in toc -->
-
-
-[![Firebase hosting CI/CD](https://github.com/anrcry/birthday-card/actions/workflows/firebase.yml/badge.svg?branch=main)](https://github.com/anrcry/birthday-card/actions/workflows/firebase.yml)
-
 ## Table of Contents <!-- omit in toc -->
 
+- [Staus Badge](#staus-badge)
 - [Demo 👁](#demo-)
 - [License 🔑](#license-)
 - [Quick Note 📝](#quick-note-)
@@ -27,6 +23,10 @@
   - [TODO Map 📍](#todo-map-)
 - [Current Contributor(s)](#current-contributors)
 - [Conclusion](#conclusion)
+
+## Staus Badge
+
+[![Firebase hosting CI/CD](https://github.com/anrcry/birthday-card/actions/workflows/firebase.yml/badge.svg?branch=main)](https://github.com/anrcry/birthday-card/actions/workflows/firebase.yml)
 
 !["Closed greeting card with prompts"](./assets/images/screenshots/birthday-card-1.png)
 
