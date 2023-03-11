@@ -1,7 +1,5 @@
-name: "Firebase hosting CI/CD"
+name: "Birthday Card Hosting - Firebase CI/CD"
 on:
-  schedule:
-    - cron: '0 0 */1 * 0'
   push:
     paths:
       - "src/**"
@@ -98,10 +96,10 @@ jobs:
         with:
           name: build
           failOnError: 'false'
-      - name: "Notify pipedream about trigger."
-        if: ${{ github.event_name == 'schedule' }}
-        uses: hugoalh/trigger-pipedream-workflow-ghaction@v3.0.0
-        with:
-          key: ${{ secrets.PIPEDREAM_KEY }}
-          method: "webhook"
-          payload: ${{ toJSON(github.event) }}
+#       - name: "Notify pipedream about trigger."
+#         if: ${{ github.event_name == 'schedule' }}
+#         uses: hugoalh/trigger-pipedream-workflow-ghaction@v3.0.0
+#         with:
+#           key: ${{ secrets.PIPEDREAM_KEY }}
+#           method: "webhook"
+#           payload: ${{ toJSON(github.event) }}
