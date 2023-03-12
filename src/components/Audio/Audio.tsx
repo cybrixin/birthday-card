@@ -12,6 +12,8 @@ const artwork: any = [];
 
 const PUBLIC_AUDIO_SKIP_TIME = 10;
 
+const { PUBLIC_FIREBASE_APP_NAME } = import.meta.env;
+
 let mediaMetadata = {
     title: "Happy Birthday 🎶",
     artist: "Anweshan Roy Chowdhury",
@@ -61,7 +63,7 @@ export default function Audio() {
     useEffect( () => {
         if(storage != null) {
             art_sizes.forEach( size => {
-                const bucket = `birthday/images/meta/round-${size}.png`
+                const bucket = `${PUBLIC_FIREBASE_APP_NAME}/images/meta/round-${size}.png`
                 const sizes = `${size}x${size}`;
                 const type = "image/png";
                 
@@ -79,7 +81,7 @@ export default function Audio() {
                 artwork
             }
 
-            const bucket = 'birthday/audio/HappyBirthday.mp3';
+            const bucket = `${PUBLIC_FIREBASE_APP_NAME}/audio/HappyBirthday.mp3`;
 
             getUrl({ storage, bucket, callback: (url:string) => {
                 setAudioUrl(url);
