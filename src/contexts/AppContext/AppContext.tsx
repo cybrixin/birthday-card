@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState, ReactNode} from "react";
 import Spinner from "@/components/Spinner";
 import type { resource } from "@/util/util";
 
+const { } = import.meta.env;
+
 const firebaseConfig = {
     apiKey: "AIzaSyCpkPHVtTSVw1fhRgnioZcnrqdmnidKVe8",
     projectId: "fire-apps-7827c",
