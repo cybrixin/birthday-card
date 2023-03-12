@@ -9,11 +9,13 @@ const  { Unload, Spinner }  = {
     Unload: lazy( () => import("@/components/Unload") ),
 };
 
+const { PUBLIC_FIREBASE_APP_NAME } = import.meta.env;
+
 const bgStyle = `linear-gradient(to bottom, rgba(255, 255, 255), rgba(255, 255, 255, 0.5))`;
 
-const cakeBucket = 'birthday/images/cake.webp';
+const cakeBucket = `${PUBLIC_FIREBASE_APP_NAME}/images/cake.webp`;
 
-const coverBucket = 'birthday/images/bd.png';
+const coverBucket = `${PUBLIC_FIREBASE_APP_NAME}/images/bd.png`;
 
 const heightBreakPoint = 481;
 
