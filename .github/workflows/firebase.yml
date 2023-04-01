@@ -62,9 +62,9 @@ jobs:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT }}'
           channelID: beta
-          target: hbd-card
+          target: birthday-cybrix
           expires: 2d
-          projectID: anrcry
+          projectID: cybrixin
       - name: "Delete the artifact"
         if: ${{ always() }}
         uses: geekyeggo/delete-artifact@v2
@@ -92,8 +92,8 @@ jobs:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT }}'
           channelID: live
-          target: hbd-card
-          projectID: anrcry
+          target: birthday-cybrix
+          projectID: cybrixin
       - name: "Delete the artifact"
         if: ${{ always() }}
         uses: geekyeggo/delete-artifact@v2
