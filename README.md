@@ -6,7 +6,7 @@
 
 ## Staus Badge <!-- omit in toc -->
 
-[![Firebase hosting CI/CD](https://github.com/anrcry/birthday-card/actions/workflows/firebase.yml/badge.svg?branch=main)](https://github.com/anrcry/birthday-card/actions/workflows/firebase.yml)
+[![Firebase hosting CI/CD](https://github.com/cybrixin/birthday-card/actions/workflows/firebase.yml/badge.svg?branch=main)](https://github.com/cybrixin/birthday-card/actions/workflows/firebase.yml)
 
 ## Table of Contents <!-- omit in toc -->
 
@@ -21,7 +21,6 @@
     - [AppCheck](#appcheck)
   - [Uses of ReCaptcha V3 Badge](#uses-of-recaptcha-v3-badge)
   - [Alternatives of Firebase](#alternatives-of-firebase)
-- [> 👆🏻 Most Cloud Storage services are Backend as a Service (BaaS). They are very likely to provide Cloud Functions, Database Storage etc.](#--most-cloud-storage-services-are-backend-as-a-service-baas-they-are-very-likely-to-provide-cloud-functions-database-storage-etc)
 - [Discussion](#discussion)
   - [Partial TODO 🟨](#partial-todo-)
   - [TODO Map 📍](#todo-map-)
@@ -40,7 +39,7 @@ It's your day from 0️⃣0️⃣:0️⃣0️⃣ to 2️⃣3️⃣:5️⃣9️�
 
 ## Demo 👁
 
-They say a demo is worth a thousand words. So if you head to the website [🔗https://birthday-card.web.app](https://birthday-card.web.app), you would be greeted 👯‍♂️👯‍♀️ with a birthday card 🎴.
+They say a demo is worth a thousand words. So if you head to the website [🔗https://birthday.cybrix.in](https://birthday.cybrix.in), you would be greeted 👯‍♂️👯‍♀️ with a birthday card 🎴.
 
 ## License 🔑
 
@@ -138,7 +137,7 @@ I would someday 📅 like to further develop this with an admin 👩🏻‍💻 
 
 ## Current Contributor(s)
 
-- **Anweshan Roy Chowdhury**: I go by the name [@anrcry](https://github.com/anrcry). This project is my sole undertaking 🙂.
+- **Anweshan Roy Chowdhury**: I go by the name [@cybrix](https://github.com/cybrixin). This project is my solo undertaking 🙂. Feel free to reach me out at [hi@cybrix.in](hi@cybrix.in)
 
 ---
 
@@ -150,4 +149,4 @@ I would like to conclude by saying, I loved developing this project. As always e
 
 Developed with lots of love :heart:,
 
-[Anweshan Roy Chowdhury](https://anrcry.github.io).
+[Anweshan Roy Chowdhury](https://cybrix.in).
