@@ -1,7 +1,7 @@
 {
   "hosting": {
     "public": "build",
-    "site": "birthday-cybrix",
+    "site": "birthday-card-cybrix-1bf55",
     "ignore": [
       "firebase.json",
       "**/.*",
