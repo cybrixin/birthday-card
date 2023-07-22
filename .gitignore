@@ -36,3 +36,5 @@ TODO.md
 # Environment Files
 .env
 .env.local
+
+key.json
